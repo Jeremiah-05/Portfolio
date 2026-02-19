@@ -1,0 +1,79 @@
+"use client";
+
+import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper";
+import SectionTitle from "./SectionTitle";
+import { FaRocket, FaServer, FaBrain, FaMapMarkerAlt } from "react-icons/fa";
+
+const highlights = [
+    { icon: FaBrain, label: "AI & ML Systems" },
+    { icon: FaServer, label: "Full Stack Development" },
+    { icon: FaRocket, label: "Production Deployed" },
+    { icon: FaMapMarkerAlt, label: "IoT Solutions" },
+];
+
+export default function About() {
+    return (
+        <SectionWrapper id="about">
+            <SectionTitle
+                title="About Me"
+                subtitle="Engineering intelligent solutions at the intersection of AI, IoT, and modern web technologies."
+            />
+
+            <div className="grid md:grid-cols-5 gap-8 items-start">
+                {/* Bio card */}
+                <motion.div
+                    whileHover={{ y: -4 }}
+                    className="md:col-span-3 glass-card p-8 sm:p-10"
+                >
+                    <div className="space-y-5 text-gray-300 leading-relaxed text-base sm:text-lg">
+                        <p>
+                            I&rsquo;m <span className="text-white font-semibold">Jeremiah J</span>, a{" "}
+                            <span className="text-purple-400">B.Tech Computer Science Engineering</span>{" "}
+                            student with a relentless drive to build technology that solves real-world
+                            problems. My core expertise lies in{" "}
+                            <span className="text-cyan-400">AI systems</span>,{" "}
+                            <span className="text-cyan-400">IoT solutions</span>, and{" "}
+                            <span className="text-cyan-400">scalable backend development</span>.
+                        </p>
+                        <p>
+                            I don&rsquo;t just write code&mdash;I architect production-grade solutions. From
+                            deploying AI-powered CRM systems on{" "}
+                            <span className="text-white font-medium">Railway</span> and{" "}
+                            <span className="text-white font-medium">Vercel</span> to designing
+                            LoRa-based IoT networks for disaster detection, I bring ideas to life with
+                            engineering rigor and startup agility.
+                        </p>
+                        <p>
+                            Currently focused on building AI-driven automation platforms that integrate
+                            real-time messaging, sentiment analysis, and intelligent lead qualification
+                            &mdash; tools that help businesses grow smarter.
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Highlight cards */}
+                <div className="md:col-span-2 grid grid-cols-2 gap-4">
+                    {highlights.map((item, i) => (
+                        <motion.div
+                            key={item.label}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1, duration: 0.4 }}
+                            whileHover={{ scale: 1.05, y: -4 }}
+                            className="glass-card p-5 flex flex-col items-center justify-center text-center gap-3 group cursor-default"
+                        >
+                            <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500/20 transition-colors">
+                                <item.icon size={22} />
+                            </div>
+                            <span className="text-sm font-medium text-gray-300">
+                                {item.label}
+                            </span>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </SectionWrapper>
+    );
+}
