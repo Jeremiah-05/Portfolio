@@ -8,26 +8,26 @@ import { FaRobot, FaComments, FaBolt, FaArrowRight } from "react-icons/fa";
 const focuses = [
     {
         icon: FaRobot,
-        title: "AI-Driven CRM Automation",
+        title: "Scaling LeadSync CRM",
         description:
-            "Building intelligent CRM systems that automatically score, classify, and route leads using LLM-powered sentiment analysis and intent detection.",
-        status: "In Production",
+            "Enhancing LeadSync CRM with better AI automation for intelligent lead qualification and real-time messaging.",
+        status: "Active Development",
         gradient: "from-purple-500 to-violet-600",
     },
     {
         icon: FaComments,
-        title: "Multi-Channel Messaging Platforms",
+        title: "Advanced LLM Integrations",
         description:
-            "Architecting unified messaging infrastructure that syncs real-time conversations across Telegram, Instagram, and web chat into a single AI-powered inbox.",
-        status: "Active Development",
+            "Exploring and integrating advanced Large Language Models into real-time systems for smarter data processing.",
+        status: "Research & Building",
         gradient: "from-cyan-500 to-blue-600",
     },
     {
         icon: FaBolt,
-        title: "Real-Time AI Lead Qualification",
+        title: "Full-Stack Systems",
         description:
-            "Designing systems that evaluate and qualify inbound leads in real-time using AI scoring models, enabling instant prioritization for sales teams.",
-        status: "Building",
+            "Building more scalable, production-ready full-stack applications to solve real-world problems.",
+        status: "Continuous",
         gradient: "from-pink-500 to-rose-600",
     },
 ];

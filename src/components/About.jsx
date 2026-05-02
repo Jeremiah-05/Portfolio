@@ -30,27 +30,17 @@ export default function About() {
                     <div className="space-y-5 text-gray-300 leading-relaxed text-base sm:text-lg">
                         <p>
                             I&rsquo;m <span className="text-white font-semibold">Jeremiah J</span>, a{" "}
-                            <span className="text-purple-400">B.Tech Computer Science Engineering</span>{" "}
-                            student at{" "}
-                            <span className="text-white font-medium">Karunya Institute of Technology and Sciences</span>{" "}
-                            with a relentless drive to build technology that solves real-world
-                            problems. My core expertise lies in{" "}
-                            <span className="text-cyan-400">AI systems</span>,{" "}
-                            <span className="text-cyan-400">IoT solutions</span>, and{" "}
-                            <span className="text-cyan-400">scalable backend development</span>.
+                            <span className="text-purple-400">B.Tech CSE student</span>{" "}
+                            at{" "}
+                            <span className="text-white font-medium">Karunya Institute of Technology and Sciences</span>,{" "}
+                            focused on building <span className="text-cyan-400">AI-powered systems</span> and{" "}
+                            <span className="text-cyan-400">real-time IoT solutions</span>.
                         </p>
                         <p>
-                            I don&rsquo;t just write code&mdash;I architect production-grade solutions. From
-                            deploying AI-powered CRM systems on{" "}
-                            <span className="text-white font-medium">Railway</span> and{" "}
-                            <span className="text-white font-medium">Vercel</span> to designing
-                            LoRa-based IoT networks for disaster detection, I bring ideas to life with
-                            engineering rigor and startup agility.
+                            Currently, I&rsquo;m developing scalable backend systems and intelligent automation tools, including a deployed AI CRM (LeadSync) and a LoRa-based landslide detection system for early disaster warning.
                         </p>
                         <p>
-                            Currently focused on building AI-driven automation platforms that integrate
-                            real-time messaging, sentiment analysis, and intelligent lead qualification
-                            &mdash; tools that help businesses grow smarter.
+                            I specialize in combining AI + real-world systems to create practical, production-ready solutions. I focus on building scalable and production-ready systems.
                         </p>
 
                         {/* Education info */}
