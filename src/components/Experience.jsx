@@ -36,7 +36,7 @@ export default function Experience() {
     return (
         <SectionWrapper id="experience">
             <SectionTitle
-                title="Current Focus"
+                title="Currently Working On"
                 subtitle="What I'm actively building and exploring — pushing the boundaries of AI and automation."
             />
 

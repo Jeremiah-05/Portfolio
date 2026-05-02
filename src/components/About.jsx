@@ -43,6 +43,16 @@ export default function About() {
                             I specialize in combining AI + real-world systems to create practical, production-ready solutions. I focus on building scalable and production-ready systems.
                         </p>
 
+                        <div className="pt-4 space-y-2">
+                            <h4 className="text-white font-semibold text-lg" style={{ fontFamily: "'Outfit', sans-serif" }}>💡 Key Strengths</h4>
+                            <ul className="list-disc pl-5 text-gray-400 space-y-1 text-base">
+                                <li>Building production-ready full-stack systems</li>
+                                <li>Integrating AI into real-world applications</li>
+                                <li>Designing IoT systems with real-time data pipelines</li>
+                                <li>Fast learner with strong problem-solving mindset</li>
+                            </ul>
+                        </div>
+
                         {/* Education info */}
                         <div className="flex flex-wrap gap-4 pt-3">
                             <div className="flex items-center gap-2 text-sm text-gray-400">
