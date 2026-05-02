@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-jeremiahj.vercel.app">🌐 Live Site</a> •
+  <a href="https://portfolio-jeremiahj.vercel.app/">🌐 Live Site</a> •
   <a href="https://www.linkedin.com/in/jeremiah-j-731241292/">💼 LinkedIn</a> •
   <a href="mailto:jeremiahj7162@gmail.com">📧 Email</a>
 </p>
