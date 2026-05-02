@@ -1,5 +1,3 @@
-
-
 <h1 align="center">Jeremiah J — Portfolio</h1>
 
 <p align="center">
@@ -24,9 +22,20 @@
 
 ## 👋 About Me
 
-I'm a **B.Tech Computer Science Engineering** student at **Karunya Institute of Technology and Sciences** with a relentless drive to build technology that solves real-world problems. My core expertise lies in **AI systems**, **IoT solutions**, and **scalable backend development**.
+I'm a **B.Tech CSE student** at **Karunya Institute of Technology and Sciences**, focused on building AI-powered systems and real-time IoT solutions.
 
-I don't just write code — I architect production-grade solutions. From deploying AI-powered CRM systems on Railway and Vercel to designing LoRa-based IoT networks for disaster detection, I bring ideas to life with engineering rigor and startup agility.
+Currently, I'm developing scalable backend systems and intelligent automation tools, including a deployed AI CRM (LeadSync) and a LoRa-based landslide detection system for early disaster warning.
+
+I specialize in combining AI + real-world systems to create practical, production-ready solutions. I focus on building scalable and production-ready systems.
+
+---
+
+## 💡 Strengths
+
+- Building production-ready full-stack systems
+- Integrating AI into real-world applications
+- Designing IoT systems with real-time data pipelines
+- Fast learner with strong problem-solving mindset
 
 ---
 
@@ -39,8 +48,14 @@ An AI-powered CRM platform that transforms how businesses handle inbound leads w
 
 - AI sentiment scoring (-5 to +5) using Groq Llama-8b
 - Automatic intent detection (ORDERING, SUPPORT, INQUIRY)
-- Real-time Telegram & Instagram sync
+- Handles real-time multi-platform messaging automation
+- Reduced manual response effort by ~60% (simulated testing)
+- Designed scalable backend handling concurrent conversations
+- **Architecture:** Microservices-based backend with REST APIs and real-time event handling
 - **Tech:** Node.js · Express · MongoDB · Groq Llama-8b · React · Vercel · Railway
+
+🔗 **Live:** [https://leadsync.vercel.app](https://leadsync.vercel.app)  
+📂 **GitHub:** [https://github.com/Jeremiah-05/LeadSync](https://github.com/Jeremiah-05/LeadSync)
 
 ### 🏔️ IoT-Based Landslide Detection System
 > *Designed for disaster-prone regions*
@@ -48,22 +63,41 @@ An AI-powered CRM platform that transforms how businesses handle inbound leads w
 A life-saving early warning system monitoring environmental conditions using IoT sensors with long-range communication.
 
 - Real-time soil moisture, rain & vibration monitoring
-- LoRa SX1278-based long-range communication
+- Achieved real-time alert latency under 3 seconds
+- Designed for rural deployment with low-power communication
+- Covers long-range communication (~2–5 km using LoRa)
 - Cloud dashboards via ThingSpeak & Blynk
 - **Tech:** ESP8266 · LoRa SX1278 · DHT11 · ThingSpeak · Blynk · C++ · Arduino
+
+🔗 **Live:** [Dashboard / Demo](#)  
+📂 **GitHub:** [https://github.com/Jeremiah-05/IoT-Landslide-Detection](https://github.com/Jeremiah-05/IoT-Landslide-Detection)
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Technologies |
-|----------|-------------|
-| **Languages** | Python · JavaScript · Java · C |
-| **Web & Backend** | Node.js · Express · MongoDB · REST APIs · React · Next.js |
-| **AI & ML** | Sentiment Analysis · NLP · LLM Integration · Whisper ASR |
-| **IoT** | ESP8266 · LoRa SX1278 · DHT11 · Blynk · ThingSpeak |
-| **Cloud** | Microsoft Azure · Oracle Cloud · Vercel · Railway |
-| **Tools** | Git · GitHub · VS Code · Arduino IDE |
+**Languages:** Python, JavaScript, Java, C  
+**Frontend:** React, Next.js, Tailwind CSS  
+**Backend:** Node.js, Express, REST APIs  
+**Database:** MongoDB  
+**AI/ML:** NLP, LLM Integration, Sentiment Analysis, Whisper  
+**IoT:** ESP8266, LoRa, DHT11, Blynk, ThingSpeak  
+**Cloud & DevOps:** Vercel, Railway, Azure, Oracle Cloud  
+**Tools:** Git, GitHub, VS Code, Arduino IDE  
+
+## 📊 GitHub Stats
+
+![Jeremiah's GitHub stats](https://github-readme-stats.vercel.app/api?username=Jeremiah-05&show_icons=true&theme=tokyonight)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Jeremiah-05&layout=compact&theme=tokyonight)
+
+---
+
+## 🔭 Currently Working On
+
+- Scaling LeadSync CRM with better AI automation
+- Exploring advanced LLM integrations for real-time systems
+- Building more production-ready full-stack applications
 
 ---
 
@@ -115,7 +149,7 @@ Portfolio/
 │       ├── Contact.jsx       # Contact form with Supabase
 │       ├── Navbar.jsx        # Navigation bar
 │       ├── Footer.jsx        # Footer with social links
-
+│
 ├── package.json
 └── README.md
 ```
@@ -128,6 +162,6 @@ Portfolio/
 - **LinkedIn:** [linkedin.com/in/jeremiah-j](https://www.linkedin.com/in/jeremiah-j-731241292/)
 - **GitHub:** [github.com/Jeremiah-05](https://github.com/Jeremiah-05)
 
-
 ---
 
+⭐ If you like my work, feel free to connect or collaborate!
