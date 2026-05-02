@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
-import { FaRocket, FaServer, FaBrain, FaMapMarkerAlt } from "react-icons/fa";
+import { FaRocket, FaServer, FaBrain, FaMapMarkerAlt, FaGraduationCap, FaUniversity } from "react-icons/fa";
 
 const highlights = [
     { icon: FaBrain, label: "AI & ML Systems" },
@@ -30,7 +31,9 @@ export default function About() {
                         <p>
                             I&rsquo;m <span className="text-white font-semibold">Jeremiah J</span>, a{" "}
                             <span className="text-purple-400">B.Tech Computer Science Engineering</span>{" "}
-                            student with a relentless drive to build technology that solves real-world
+                            student at{" "}
+                            <span className="text-white font-medium">Karunya Institute of Technology and Sciences</span>{" "}
+                            with a relentless drive to build technology that solves real-world
                             problems. My core expertise lies in{" "}
                             <span className="text-cyan-400">AI systems</span>,{" "}
                             <span className="text-cyan-400">IoT solutions</span>, and{" "}
@@ -49,6 +52,18 @@ export default function About() {
                             real-time messaging, sentiment analysis, and intelligent lead qualification
                             &mdash; tools that help businesses grow smarter.
                         </p>
+
+                        {/* Education info */}
+                        <div className="flex flex-wrap gap-4 pt-3">
+                            <div className="flex items-center gap-2 text-sm text-gray-400">
+                                <FaGraduationCap className="text-purple-400" size={14} />
+                                <span>B.Tech CSE</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-gray-400">
+                                <FaUniversity className="text-cyan-400" size={14} />
+                                <span>Karunya Institute of Technology</span>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
 

@@ -114,7 +114,7 @@ export default function Github() {
             {/* GitHub Profile Link */}
             <div className="flex justify-center mb-10">
                 <motion.a
-                    href="https://github.com/URK23CS1218"
+                    href="https://github.com/Jeremiah-05"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.03 }}
@@ -122,7 +122,7 @@ export default function Github() {
                     className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border border-purple-500/20 text-purple-400 font-medium text-sm hover:border-purple-500/40 transition-colors"
                 >
                     <img
-                        src="https://github.com/URK23CS1218.png"
+                        src="https://github.com/Jeremiah-05.png"
                         alt="GitHub Avatar"
                         className="w-7 h-7 rounded-full"
                     />
@@ -136,7 +136,7 @@ export default function Github() {
                 {repos.map((repo, i) => (
                     <motion.a
                         key={repo.name}
-                        href={`https://github.com/URK23CS1218/${repo.name}`}
+                        href={`https://github.com/Jeremiah-05/${repo.name}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 20 }}

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
-import { supabase } from "@/lib/supabase";
 import {
     FaEnvelope,
     FaLinkedinIn,
@@ -13,6 +12,7 @@ import {
     FaPaperPlane,
     FaMapMarkerAlt,
     FaSpinner,
+    FaCheckCircle,
 } from "react-icons/fa";
 
 const contactInfo = [
@@ -31,8 +31,8 @@ const contactInfo = [
     {
         icon: FaGithub,
         label: "GitHub",
-        value: "github.com/URK23CS1218",
-        href: "https://github.com/URK23CS1218",
+        value: "github.com/Jeremiah-05",
+        href: "https://github.com/Jeremiah-05",
     },
     {
         icon: FaWhatsapp,
@@ -47,6 +47,20 @@ const contactInfo = [
         href: null,
     },
 ];
+
+// ─── Web3Forms Access Key ────────────────────────────────────────────
+// This is your FREE Web3Forms access key.
+// Messages will be sent directly to: jeremiahj7162@gmail.com
+//
+// HOW TO SET UP (one-time, 30 seconds):
+// 1. Go to https://web3forms.com/
+// 2. Enter your email: jeremiahj7162@gmail.com
+// 3. Click "Create Access Key"
+// 4. Check your email and verify
+// 5. Copy the access key and paste it below
+// 6. That's it! You'll receive every form submission in your inbox.
+// ─────────────────────────────────────────────────────────────────────
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "a589616a-c2d1-428f-b0f2-7925fcbf4a06";
 
 export default function Contact() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -76,25 +90,43 @@ export default function Contact() {
         if (Object.keys(errs).length === 0) {
             setLoading(true);
             try {
-                if (supabase) {
-                    const { error } = await supabase.from("contacts").insert([
-                        {
+                // ── Method 1: Web3Forms (sends email to you directly) ──
+                if (WEB3FORMS_ACCESS_KEY) {
+                    const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            access_key: WEB3FORMS_ACCESS_KEY,
+                            subject: `🚀 New Portfolio Message from ${form.name.trim()}`,
+                            from_name: "Portfolio Contact Form",
                             name: form.name.trim(),
                             email: form.email.trim(),
                             message: form.message.trim(),
-                            created_at: new Date().toISOString(),
-                        },
-                    ]);
-                    if (error) throw error;
+                        }),
+                    });
+
+                    const result = await response.json();
+                    if (!result.success) {
+                        throw new Error(result.message || "Failed to send");
+                    }
+                } else {
+                    // ── Fallback: mailto link ──
+                    // If Web3Forms key is not set, open email client as fallback
+                    const mailtoUrl = `mailto:jeremiahj7162@gmail.com?subject=${encodeURIComponent(
+                        `Portfolio Contact: ${form.name.trim()}`
+                    )}&body=${encodeURIComponent(
+                        `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\nMessage:\n${form.message.trim()}`
+                    )}`;
+                    window.open(mailtoUrl, "_blank");
                 }
 
                 setSubmitted(true);
                 setForm({ name: "", email: "", message: "" });
-                setTimeout(() => setSubmitted(false), 5000);
+                setTimeout(() => setSubmitted(false), 6000);
             } catch (err) {
-                console.error("Supabase error:", err);
+                console.error("Form submission error:", err);
                 setSubmitError(
-                    "Failed to send message. Please try again or email me directly."
+                    "Failed to send message. Please try emailing me directly at jeremiahj7162@gmail.com"
                 );
             } finally {
                 setLoading(false);
@@ -178,16 +210,16 @@ export default function Contact() {
                             className="h-full flex flex-col items-center justify-center text-center py-12"
                         >
                             <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 mb-4">
-                                <FaPaperPlane size={24} />
+                                <FaCheckCircle size={28} />
                             </div>
                             <h3
                                 className="text-xl font-bold text-white mb-2"
                                 style={{ fontFamily: "'Outfit', sans-serif" }}
                             >
-                                Message Sent!
+                                Message Sent Successfully!
                             </h3>
                             <p className="text-gray-400 text-sm">
-                                Thanks for reaching out. I&rsquo;ll get back to you soon.
+                                Thanks for reaching out! I&rsquo;ll get back to you within 24 hours.
                             </p>
                         </motion.div>
                     ) : (

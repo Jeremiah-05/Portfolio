@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Certifications from "@/components/Certifications";
 import Experience from "@/components/Experience";
 import Github from "@/components/Github";
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
@@ -20,6 +21,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <Certifications />
         <Experience />
         <Github />
         <Contact />
