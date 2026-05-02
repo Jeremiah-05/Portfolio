@@ -74,7 +74,7 @@ const certifications = [
         description:
             "Secured 2nd Place at the IIC Hackathon Challenge during GATEWAY'26 National Level Symposium, winning ₹4,000 cash prize for innovative solution development.",
         credentialUrl: "https://www.linkedin.com/in/jeremiah-j-731241292/",
-        badge: "🏆 Winner",
+        badge: "🏆 Runner",
         isAward: true,
     },
 ];
