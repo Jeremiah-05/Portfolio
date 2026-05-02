@@ -8,7 +8,6 @@ import {
     FaEnvelope,
     FaLinkedinIn,
     FaGithub,
-    FaWhatsapp,
     FaPaperPlane,
     FaMapMarkerAlt,
     FaSpinner,
@@ -34,12 +33,7 @@ const contactInfo = [
         value: "github.com/Jeremiah-05",
         href: "https://github.com/Jeremiah-05",
     },
-    {
-        icon: FaWhatsapp,
-        label: "WhatsApp",
-        value: "+91 91591 92525",
-        href: "https://wa.me/919159192525?text=Hi%20Jeremiah%2C%20I%20found%20your%20portfolio!",
-    },
+
     {
         icon: FaMapMarkerAlt,
         label: "Location",

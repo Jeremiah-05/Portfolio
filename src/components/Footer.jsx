@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaWhatsapp, FaHeart } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
     { icon: FaGithub, href: "https://github.com/Jeremiah-05", label: "GitHub" },
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/jeremiah-j-731241292/", label: "LinkedIn" },
     { icon: FaEnvelope, href: "mailto:jeremiahj7162@gmail.com", label: "Email" },
-    { icon: FaWhatsapp, href: "https://wa.me/919159192525", label: "WhatsApp" },
+
 ];
 
 export default function Footer() {
@@ -48,8 +48,7 @@ export default function Footer() {
 
                     {/* Copyright */}
                     <p className="text-sm text-gray-500 flex items-center gap-1">
-                        © {new Date().getFullYear()} Jeremiah J. Built with{" "}
-                        <FaHeart className="text-purple-500 text-xs" /> and Next.js
+                        © {new Date().getFullYear()} Jeremiah J.
                     </p>
                 </div>
             </div>

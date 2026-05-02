@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://github.com/Jeremiah-05.png" width="120" height="120" style="border-radius: 50%;" alt="Jeremiah J" />
-</p>
+
 
 <h1 align="center">Jeremiah J — Portfolio</h1>
 
@@ -117,7 +115,7 @@ Portfolio/
 │       ├── Contact.jsx       # Contact form with Supabase
 │       ├── Navbar.jsx        # Navigation bar
 │       ├── Footer.jsx        # Footer with social links
-│       └── WhatsAppFloat.jsx # Floating WhatsApp button
+
 ├── package.json
 └── README.md
 ```
@@ -129,10 +127,7 @@ Portfolio/
 - **Email:** jeremiahj7162@gmail.com
 - **LinkedIn:** [linkedin.com/in/jeremiah-j](https://www.linkedin.com/in/jeremiah-j-731241292/)
 - **GitHub:** [github.com/Jeremiah-05](https://github.com/Jeremiah-05)
-- **WhatsApp:** [+91 9159192525](https://wa.me/919159192525)
+
 
 ---
 
-<p align="center">
-  Built with ❤️ by <strong>Jeremiah J</strong> using Next.js, React & Framer Motion
-</p>

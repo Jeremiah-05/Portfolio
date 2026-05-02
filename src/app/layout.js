@@ -36,7 +36,7 @@ export const metadata = {
   },
 };
 
-import WhatsAppFloat from "@/components/WhatsAppFloat";
+
 
 export default function RootLayout({ children }) {
   return (
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
       >
         {children}
-        <WhatsAppFloat />
+
       </body>
     </html>
   );
