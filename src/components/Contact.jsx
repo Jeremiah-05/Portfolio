@@ -37,7 +37,7 @@ const contactInfo = [
     {
         icon: FaMapMarkerAlt,
         label: "Location",
-        value: "India",
+        value: "Tenkasi, Tamil Nadu",
         href: null,
     },
 ];

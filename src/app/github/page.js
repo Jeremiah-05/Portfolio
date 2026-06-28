@@ -1,17 +1,17 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Github from "@/components/Github";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
-export default function Home() {
+export default function GithubPage() {
   return (
     <>
       <Navbar />
       <PageTransition>
-        <main>
-          <Hero />
+        <main className="pt-20">
+          <Github />
         </main>
       </PageTransition>
       <Footer />

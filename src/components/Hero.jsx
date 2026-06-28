@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
 import Image from "next/image";
 
 const roles = [
@@ -108,20 +109,20 @@ export default function Hero() {
                             transition={{ duration: 0.6, delay: 0.9 }}
                             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
                         >
-                            <a
-                                href="#projects"
+                            <Link
+                                href="/projects"
                                 className="group flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-base hover:opacity-90 transition-all hover:scale-105 active:scale-95"
                             >
                                 View Projects
                                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
-                            </a>
-                            <a
-                                href="#contact"
+                            </Link>
+                            <Link
+                                href="/contact"
                                 className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-gray-300 font-medium text-base hover:bg-white/5 hover:border-white/20 transition-all hover:scale-105 active:scale-95"
                             >
                                 <FaEnvelope size={14} />
                                 Contact Me
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
 
@@ -173,20 +174,22 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Scroll indicator */}
+            {/* Navigate to About */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
             >
-                <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
-                    <motion.div
-                        animate={{ y: [0, 12, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-1.5 h-1.5 rounded-full bg-purple-400"
-                    />
-                </div>
+                <Link href="/about" className="block hover:opacity-80 transition-opacity" aria-label="Go to About page">
+                    <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
+                        <motion.div
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="w-1.5 h-1.5 rounded-full bg-purple-400"
+                        />
+                    </div>
+                </Link>
             </motion.div>
         </section>
     );

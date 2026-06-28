@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { FaCode, FaGlobe, FaBrain, FaMicrochip } from "react-icons/fa";
@@ -11,72 +10,31 @@ const categories = [
         title: "Programming",
         icon: FaCode,
         color: "from-purple-500 to-violet-600",
-        skills: [
-            { name: "Java", level: 85 },
-            { name: "C", level: 75 },
-            { name: "Python", level: 90 },
-            { name: "JavaScript", level: 88 },
-        ],
+        accent: "#a78bfa",
+        skills: ["Java", "C", "Python", "JavaScript", "HTML", "CSS"],
     },
     {
         title: "Web & Backend",
         icon: FaGlobe,
         color: "from-cyan-500 to-blue-600",
-        skills: [
-            { name: "Node.js", level: 88 },
-            { name: "Express", level: 85 },
-            { name: "MongoDB", level: 82 },
-            { name: "REST APIs", level: 90 },
-            { name: "Git / GitHub", level: 85 },
-        ],
+        accent: "#22d3ee",
+        skills: ["Node.js", "Express", "MongoDB", "REST APIs", "React", "Next.js", "Git / GitHub"],
     },
     {
         title: "AI & ML",
         icon: FaBrain,
         color: "from-pink-500 to-rose-600",
-        skills: [
-            { name: "Sentiment Analysis", level: 80 },
-            { name: "NLP", level: 78 },
-            { name: "LLM Integration", level: 82 },
-            { name: "Whisper (ASR)", level: 75 },
-            { name: "ML Basics", level: 70 },
-        ],
+        accent: "#f472b6",
+        skills: ["Sentiment Analysis", "NLP", "LLM Integration", "Whisper (ASR)", "ML Basics"],
     },
     {
         title: "IoT",
         icon: FaMicrochip,
         color: "from-emerald-500 to-teal-600",
-        skills: [
-            { name: "ESP8266", level: 85 },
-            { name: "LoRa SX1278", level: 80 },
-            { name: "DHT11 / Sensors", level: 88 },
-            { name: "Blynk", level: 78 },
-            { name: "ThingSpeak", level: 75 },
-        ],
+        accent: "#34d399",
+        skills: ["ESP8266", "LoRa SX1278", "DHT11 / Sensors", "Blynk", "ThingSpeak"],
     },
 ];
-
-function ProgressBar({ name, level, delay }) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-    return (
-        <div ref={ref} className="space-y-1.5">
-            <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-300 font-medium">{name}</span>
-                <span className="text-xs text-gray-500">{level}%</span>
-            </div>
-            <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${level}%` } : {}}
-                    transition={{ duration: 1.2, delay: delay * 0.1, ease: "easeOut" }}
-                    className="h-full rounded-full bg-gradient-to-r from-purple-500 to-cyan-500"
-                />
-            </div>
-        </div>
-    );
-}
 
 export default function Skills() {
     return (
@@ -112,15 +70,29 @@ export default function Skills() {
                             </h3>
                         </div>
 
-                        {/* Skills */}
-                        <div className="space-y-4">
+                        {/* Skill Badges */}
+                        <div className="flex flex-wrap gap-2.5">
                             {cat.skills.map((skill, si) => (
-                                <ProgressBar
-                                    key={skill.name}
-                                    name={skill.name}
-                                    level={skill.level}
-                                    delay={si}
-                                />
+                                <motion.span
+                                    key={skill}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        delay: ci * 0.1 + si * 0.05,
+                                        duration: 0.35,
+                                        ease: "easeOut",
+                                    }}
+                                    whileHover={{ scale: 1.08, y: -2 }}
+                                    className="px-4 py-2 rounded-xl text-sm font-medium cursor-default transition-colors"
+                                    style={{
+                                        background: `${cat.accent}15`,
+                                        color: cat.accent,
+                                        border: `1px solid ${cat.accent}30`,
+                                    }}
+                                >
+                                    {skill}
+                                </motion.span>
                             ))}
                         </div>
                     </motion.div>

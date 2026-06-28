@@ -14,31 +14,31 @@ import {
 
 const repos = [
     {
-        name: "LeadSync-CRM",
+        name: "SIH",
         description:
-            "AI-powered CRM with real-time sentiment analysis, intent detection, and multi-channel messaging integrations.",
+            "Smart India Hackathon project repository built with TypeScript.",
+        language: "TypeScript",
+        languageColor: "#3178c6",
+        stars: 0,
+        forks: 0,
+    },
+    {
+        name: "React",
+        description:
+            "A collection of React components and applications showcasing frontend development skills.",
         language: "JavaScript",
-        languageColor: "#f7df1e",
-        stars: 12,
-        forks: 3,
+        languageColor: "#f1e05a",
+        stars: 0,
+        forks: 0,
     },
     {
-        name: "Landslide-Detection-IoT",
+        name: "lifelines-frontend",
         description:
-            "LoRa-based IoT system for real-time soil and environmental monitoring with cloud dashboard integration.",
-        language: "C++",
-        languageColor: "#00599C",
-        stars: 8,
-        forks: 2,
-    },
-    {
-        name: "AI-Smart-Inbox",
-        description:
-            "Intelligent inbox that classifies, scores, and routes incoming messages using LLM-powered analysis.",
-        language: "Python",
-        languageColor: "#3776ab",
-        stars: 6,
-        forks: 1,
+            "Frontend application for the lifelines project, built with modern web technologies.",
+        language: "JavaScript",
+        languageColor: "#f1e05a",
+        stars: 0,
+        forks: 0,
     },
 ];
 
@@ -46,21 +46,21 @@ const stats = [
     {
         icon: FaCode,
         label: "Repositories",
-        value: "15+",
+        value: "22",
         color: "text-purple-400",
         bg: "bg-purple-500/10",
     },
     {
         icon: FaFire,
         label: "Contributions",
-        value: "200+",
+        value: "193+",
         color: "text-cyan-400",
         bg: "bg-cyan-500/10",
     },
     {
         icon: FaStar,
-        label: "Stars Earned",
-        value: "26+",
+        label: "Followers",
+        value: "1",
         color: "text-yellow-400",
         bg: "bg-yellow-500/10",
     },

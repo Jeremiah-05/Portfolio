@@ -1,95 +1,318 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
-import { FaRobot, FaComments, FaBolt, FaArrowRight } from "react-icons/fa";
+import {
+    FaArrowRight,
+    FaBriefcase,
+    FaShieldAlt,
+    FaPython,
+    FaCode,
+    FaLinkedin,
+    FaFilePdf,
+    FaCalendarAlt,
+    FaMapMarkerAlt,
+    FaExternalLinkAlt,
+    FaCheckCircle,
+} from "react-icons/fa";
 
-const focuses = [
+/* ─── Internship & Work Experience Data (Verified via LinkedIn) ─── */
+const experiences = [
     {
-        icon: FaRobot,
-        title: "Scaling LeadSync CRM",
+        icon: FaShieldAlt,
+        title: "Cybersecurity",
+        company: "Cisco",
+        companyLogo: "cisco",
+        duration: "June 2025 – October 2025",
+        type: "Hybrid",
+        category: "Internship",
+        tags: [
+            "Education / Teaching / Training",
+            "Engineering and Technology",
+        ],
         description:
-            "Enhancing LeadSync CRM with better AI automation for intelligent lead qualification and real-time messaging.",
-        status: "Active Development",
-        gradient: "from-purple-500 to-violet-600",
+            "Cisco AICTE Virtual Internship Program 2025 — Gained hands-on experience in network security, threat analysis, and cybersecurity frameworks through Cisco's industry-leading program.",
+        certificate: "/Virtual-Internship-Cybersecurity.pdf",
+        linkedin:
+            "https://www.linkedin.com/in/jeremiah-j-731241292/",
+        gradient: "from-blue-500 to-cyan-500",
+        accentColor: "#06b6d4",
     },
     {
-        icon: FaComments,
-        title: "Advanced LLM Integrations",
+        icon: FaPython,
+        title: "Python Programming",
+        company: "CodeTech IT Solutions",
+        companyLogo: "codetech",
+        duration: "May 2025 – June 2025",
+        type: "Hybrid",
+        category: "Internship",
+        tags: [
+            "Education / Teaching / Training",
+            "Engineering and Technology",
+        ],
         description:
-            "Exploring and integrating advanced Large Language Models into real-time systems for smarter data processing.",
-        status: "Research & Building",
-        gradient: "from-cyan-500 to-blue-600",
+            "Internship Program in Python Programming — Developed practical skills in Python development, data handling, and building automation scripts for real-world IT solutions.",
+        certificate: "/CodeTech-IT-Solutions-Certificate.pdf",
+        linkedin:
+            "https://www.linkedin.com/in/jeremiah-j-731241292/",
+        gradient: "from-yellow-500 to-orange-500",
+        accentColor: "#f59e0b",
     },
     {
-        icon: FaBolt,
-        title: "Full-Stack Systems",
+        icon: FaCode,
+        title: "Web Development",
+        company: "Ediglobe",
+        companyLogo: "ediglobe",
+        duration: "June 2024 – July 2024",
+        type: "Hybrid",
+        category: "Internship",
+        tags: [
+            "Education / Teaching / Training",
+            "Engineering and Technology",
+        ],
         description:
-            "Building more scalable, production-ready full-stack applications to solve real-world problems.",
-        status: "Continuous",
-        gradient: "from-pink-500 to-rose-600",
+            "Internship with EdiGlobe — Built and deployed responsive web applications using modern frontend technologies, gaining hands-on experience in full-stack web development workflows.",
+        certificate: "/Ediglobe-Internship-Certificate.pdf",
+        linkedin:
+            "https://www.linkedin.com/in/jeremiah-j-731241292/",
+        gradient: "from-green-500 to-emerald-500",
+        accentColor: "#10b981",
+        featured: true,
     },
 ];
 
+
+/* ─── Company Logo Component ─── */
+function CompanyAvatar({ company, gradient }) {
+    const initial = company.charAt(0).toUpperCase();
+    return (
+        <div
+            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg`}
+        >
+            {initial}
+        </div>
+    );
+}
+
+/* ─── Experience Card ─── */
+function ExperienceCard({ exp, index }) {
+    const [expanded, setExpanded] = useState(false);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
+            className="relative group"
+        >
+            {/* Timeline connector */}
+            {index < experiences.length - 1 && (
+                <div className="absolute left-6 top-[72px] bottom-0 w-[2px] bg-gradient-to-b from-white/10 to-transparent hidden md:block" />
+            )}
+
+            <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="glass-card p-0 overflow-hidden cursor-pointer"
+                onClick={() => setExpanded(!expanded)}
+            >
+                {/* Top accent bar */}
+                <div
+                    className={`h-1 w-full bg-gradient-to-r ${exp.gradient}`}
+                />
+
+                <div className="p-6 sm:p-8">
+                    {/* Header row */}
+                    <div className="flex items-start gap-4 mb-4">
+                        <CompanyAvatar
+                            company={exp.company}
+                            gradient={exp.gradient}
+                        />
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                                <h3
+                                    className="text-xl font-bold text-white"
+                                    style={{
+                                        fontFamily: "'Outfit', sans-serif",
+                                    }}
+                                >
+                                    {exp.title}
+                                </h3>
+                                {exp.featured && (
+                                    <span className="text-yellow-400 text-sm">
+                                        ★
+                                    </span>
+                                )}
+                                <FaCheckCircle
+                                    className="text-green-400 shrink-0"
+                                    size={14}
+                                    title="Verified on LinkedIn"
+                                />
+                            </div>
+                            <p className="text-gray-400 text-sm mt-0.5">
+                                {exp.company}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Meta info */}
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 text-xs text-gray-500">
+                        <span className="flex items-center gap-1.5">
+                            <FaCalendarAlt size={11} />
+                            {exp.duration}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                            <FaMapMarkerAlt size={11} />
+                            {exp.type}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                            <FaBriefcase size={11} />
+                            {exp.category}
+                        </span>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        <span
+                            className="text-xs font-medium px-3 py-1 rounded-full"
+                            style={{
+                                background: `${exp.accentColor}20`,
+                                color: exp.accentColor,
+                                border: `1px solid ${exp.accentColor}30`,
+                            }}
+                        >
+                            {exp.category}
+                        </span>
+                        {exp.tags.map((tag) => (
+                            <span
+                                key={tag}
+                                className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10"
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-400 leading-relaxed mb-5">
+                        {exp.description}
+                    </p>
+
+                    {/* Expandable actions */}
+                    <AnimatePresence>
+                        {expanded && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden"
+                            >
+                                <div className="flex flex-wrap gap-3 pt-2 pb-1 border-t border-white/5">
+                                    {/* View Certificate */}
+                                    <a
+                                        href={exp.certificate}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm text-gray-300 hover:text-white transition-all border border-white/5 hover:border-white/15 group/btn"
+                                    >
+                                        <FaFilePdf
+                                            size={14}
+                                            className="text-red-400"
+                                        />
+                                        <span>View Certificate</span>
+                                        <FaExternalLinkAlt
+                                            size={10}
+                                            className="opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                                        />
+                                    </a>
+
+                                    {/* Verify on LinkedIn */}
+                                    <a
+                                        href={exp.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0077b5]/10 hover:bg-[#0077b5]/20 text-sm text-[#0077b5] hover:text-[#00a0dc] transition-all border border-[#0077b5]/20 hover:border-[#0077b5]/40 group/btn"
+                                    >
+                                        <FaLinkedin size={14} />
+                                        <span>LinkedIn</span>
+                                        <FaExternalLinkAlt
+                                            size={10}
+                                            className="opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                                        />
+                                    </a>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Expand hint */}
+                    <div className="flex items-center gap-1.5 text-xs text-gray-600 mt-2">
+                        <motion.span
+                            animate={{ rotate: expanded ? 90 : 0 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <FaArrowRight size={10} />
+                        </motion.span>
+                        <span>
+                            {expanded
+                                ? "Click to collapse"
+                                : "Click for certificate & verification"}
+                        </span>
+                    </div>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+}
+
+/* ─── Main Experience Component ─── */
 export default function Experience() {
     return (
         <SectionWrapper id="experience">
+            {/* Internship & Work Experience Section */}
             <SectionTitle
-                title="Currently Working On"
-                subtitle="What I'm actively building and exploring — pushing the boundaries of AI and automation."
+                title="Internship & Work Experience"
+                subtitle="Click any card to view certificate and LinkedIn profile."
             />
 
-            <div className="grid md:grid-cols-3 gap-6">
-                {focuses.map((item, i) => (
-                    <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.15, duration: 0.5 }}
-                        whileHover={{ y: -6 }}
-                        className="glass-card p-6 sm:p-8 flex flex-col group relative overflow-hidden"
-                    >
-                        {/* Background gradient glow */}
-                        <div
-                            className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${item.gradient} rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity`}
-                        />
-
-                        {/* Status */}
-                        <div className="flex items-center gap-2 mb-5 relative z-10">
-                            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                            <span className="text-xs font-medium text-green-400 uppercase tracking-wider">
-                                {item.status}
-                            </span>
-                        </div>
-
-                        {/* Icon */}
-                        <div
-                            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white mb-5 relative z-10`}
-                        >
-                            <item.icon size={20} />
-                        </div>
-
-                        {/* Content */}
-                        <h3
-                            className="text-lg font-bold text-white mb-3 relative z-10"
-                            style={{ fontFamily: "'Outfit', sans-serif" }}
-                        >
-                            {item.title}
-                        </h3>
-                        <p className="text-sm text-gray-400 leading-relaxed flex-grow relative z-10">
-                            {item.description}
-                        </p>
-
-                        {/* Arrow */}
-                        <div className="mt-5 flex items-center gap-2 text-purple-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity relative z-10">
-                            <span>Learn more</span>
-                            <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </motion.div>
+            <div className="grid gap-6 mb-20">
+                {experiences.map((exp, i) => (
+                    <ExperienceCard key={exp.title} exp={exp} index={i} />
                 ))}
             </div>
+
+            {/* LinkedIn verification banner */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mb-20"
+            >
+                <a
+                    href="https://www.linkedin.com/in/jeremiah-j-731241292/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-[#0077b5]/10 border border-[#0077b5]/20 hover:bg-[#0077b5]/15 hover:border-[#0077b5]/30 transition-all group"
+                >
+                    <FaLinkedin size={20} className="text-[#0077b5]" />
+                    <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                        LinkedIn Profile
+                    </span>
+                    <FaExternalLinkAlt
+                        size={11}
+                        className="text-gray-500 group-hover:text-white transition-colors"
+                    />
+                </a>
+            </motion.div>
+
+
         </SectionWrapper>
     );
 }

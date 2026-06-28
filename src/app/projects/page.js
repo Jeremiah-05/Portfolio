@@ -1,17 +1,17 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
-export default function Home() {
+export default function ProjectsPage() {
   return (
     <>
       <Navbar />
       <PageTransition>
-        <main>
-          <Hero />
+        <main className="pt-20">
+          <Projects />
         </main>
       </PageTransition>
       <Footer />

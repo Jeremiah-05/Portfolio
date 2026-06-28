@@ -21,7 +21,11 @@
 }
 
 * {
-  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: calc(100vh - 80px);
 }
 
 body {
