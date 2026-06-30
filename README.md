@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="https://portfolio-jeremiahj.vercel.app/">🌐 Live Site</a> •
+  <a href="https://portfolio-jeremiahj.vercel.app/resume.pdf">📄 View & Download Resume</a> •
   <a href="https://www.linkedin.com/in/jeremiah-j-731241292/">💼 LinkedIn</a> •
   <a href="mailto:jeremiahj7162@gmail.com">📧 Email</a>
 </p>
@@ -81,7 +82,7 @@ A life-saving early warning system monitoring environmental conditions using IoT
 **Backend:** Node.js, Express, REST APIs  
 **Database:** MongoDB  
 **AI/ML:** NLP, LLM Integration, Sentiment Analysis, Whisper  
-**IoT:** ESP8266, LoRa, DHT11, Blynk, ThingSpeak  
+**IoT:** Embedded Systems, IoMT, LoRa, Edge Computing, ThingSpeak, Blynk  
 **Cloud & DevOps:** Vercel, Railway, Azure, Oracle Cloud  
 **Tools:** Git, GitHub, VS Code, Arduino IDE  
 
@@ -90,6 +91,21 @@ A life-saving early warning system monitoring environmental conditions using IoT
 ![Jeremiah's GitHub stats](https://github-readme-stats.vercel.app/api?username=Jeremiah-05&show_icons=true&theme=tokyonight)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Jeremiah-05&layout=compact&theme=tokyonight)
+
+### ✨ Highlighted Repositories
+- [**SIH**](https://github.com/Jeremiah-05/SIH) (TypeScript)
+- [**React**](https://github.com/Jeremiah-05/React) (JavaScript)
+- [**lifelines-frontend**](https://github.com/Jeremiah-05/lifelines-frontend) (JavaScript)
+
+---
+
+## 📚 Research & Publications
+
+| # | Title | Venue | Role | Year |
+|---|-------|-------|------|------|
+| 01 | **Federated Digital Twins (FDT) for Geriatric Remote Patient Monitoring** | Book of Proceedings — ICSHI 2026 (AICTE Sponsored) | Co-Author | 2026 |
+
+**Research Domains:** Federated Learning · Digital Twins · Edge AI · Generative AI · IoMT · Healthcare AI · Privacy-Preserving AI · Remote Patient Monitoring
 
 ---
 
@@ -103,13 +119,26 @@ A life-saving early warning system monitoring environmental conditions using IoT
 
 ## 🏅 Certifications & Awards
 
+### 🏆 Hackathons
+| Award | Organization | Date |
+|-------|--------------|------|
+| **IIC Hackathon Challenge 2026 — 2nd Place** | PSG College of Arts & Science | February 2026 |
+| **Smart India Hackathon (SIH) 2025 — Internal Round** | Karunya Institute of Technology and Sciences | September 2025 |
+| **Digital Campus 2.0 on Google Cloud — G-K Hacks** | Karunya Institute of Technology and Sciences | November 2025 |
+
+### 💼 Internships
+| Role | Company | Date |
+|------|---------|------|
+| **Virtual Internship Program in Cybersecurity** | Cisco | October 2025 |
+| **Python Programming Internship** | CodeTech IT Solutions | June 2025 |
+| **Web Development Internship** | EdiGlobe | June 2024 |
+
+### 📜 Certifications
 | Certification | Issuer | Date |
 |--------------|--------|------|
-| Azure Fundamentals (AZ-900) | Microsoft | April 2026 |
-| OCI Data Science Professional | Oracle | October 2025 |
-| Cybersecurity Virtual Internship | Cisco | October 2025 |
-| Azure Data Fundamentals (DP-900) | Microsoft | August 2025 |
-| 🏆 IIC Hackathon 2026 — **2nd Place** | PSG College of Arts & Science | February 2026 |
+| **Microsoft Certified: Azure Fundamentals (AZ-900)** | Microsoft | April 2026 |
+| **OCI 2025 Certified Data Science Professional** | Oracle | October 2025 |
+| **Microsoft Certified: Azure Data Fundamentals (DP-900)** | Microsoft | August 2025 |
 
 ---
 
@@ -145,6 +174,7 @@ Portfolio/
 │       ├── Projects.jsx      # Featured projects showcase
 │       ├── Experience.jsx    # Current focus areas
 │       ├── Certifications.jsx # Certifications & awards
+│       ├── Research.jsx       # Research & publications
 │       ├── Github.jsx        # GitHub activity integration
 │       ├── Contact.jsx       # Contact form with Supabase
 │       ├── Navbar.jsx        # Navigation bar
