@@ -32,7 +32,7 @@ const categories = [
         icon: FaMicrochip,
         color: "from-emerald-500 to-teal-600",
         accent: "#34d399",
-        skills: ["ESP8266", "LoRa SX1278", "DHT11 / Sensors", "Blynk", "ThingSpeak"],
+        skills: ["Embedded Systems", "IoMT", "LoRa", "Edge Computing", "ThingSpeak", "Blynk"],
     },
 ];
 
