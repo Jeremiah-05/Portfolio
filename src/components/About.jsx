@@ -37,7 +37,7 @@ export default function About() {
                             <span className="text-cyan-400">real-time IoT solutions</span>.
                         </p>
                         <p>
-                            Currently, I&rsquo;m developing scalable backend systems and intelligent automation tools, including a deployed AI CRM (LeadSync) and a LoRa-based landslide detection system for early disaster warning.
+                            Currently, I&rsquo;m developing scalable backend systems and intelligent automation tools, including a deployed AI CRM (LeadSync) and an IoT-based landslide early warning system with real-time cloud monitoring.
                         </p>
                         <p>
                             I specialize in combining AI + real-world systems to create practical, production-ready solutions. I focus on building scalable and production-ready systems.

@@ -7,12 +7,10 @@ import {
     FaBrain,
     FaComments,
     FaTelegram,
-    FaInstagram,
     FaRocket,
     FaCloud,
     FaMountain,
     FaExclamationTriangle,
-    FaSatelliteDish,
     FaMobileAlt,
     FaExternalLinkAlt,
     FaGithub,
@@ -51,27 +49,26 @@ const projects = [
     {
         title: "IoT-Based Landslide Detection System",
         description:
-            "A life-saving early warning system monitoring environmental conditions using IoT sensors with long-range communication.",
+            "A real-time early warning system for landslide-prone slopes — monitors soil moisture, vibration, rainfall, temperature & humidity, then triggers local and remote alerts before conditions turn dangerous.",
         features: [
-            { icon: FaMountain, text: "Real-time soil moisture, rain & vibration monitoring" },
-            { icon: FaRocket, text: "Achieved real-time alert latency under 3 seconds" },
-            { icon: FaSatelliteDish, text: "Long-range communication (~2–5 km using LoRa)" },
-            { icon: FaCloud, text: "Designed for rural deployment with low-power communication" },
+            { icon: FaMountain, text: "Real-time soil moisture, rainfall & vibration monitoring" },
+            { icon: FaExclamationTriangle, text: "On-site OLED readout, buzzer & 3-color LED status indicator (dry/moderate/wet)" },
+            { icon: FaMobileAlt, text: "Remote monitoring & relay control from anywhere via the Blynk app" },
+            { icon: FaCloud, text: "Cloud data logging to ThingSpeak across 5 sensor channels" },
         ],
         tech: [
             "ESP8266",
-            "LoRa SX1278",
             "DHT11",
-            "ThingSpeak",
             "Blynk",
-            "C++",
+            "ThingSpeak",
             "Arduino",
+            "C++",
         ],
         gradient: "from-cyan-600/20 to-teal-600/20",
         borderColor: "border-cyan-500/20",
         accentColor: "text-cyan-400",
-        impact: "Achieved real-time alert latency under 3 seconds for rural disaster warning",
-        live: "#",
+        impact: "A fully working hardware-to-cloud prototype — real sensors, real alerts, real data on ThingSpeak",
+        live: null,
         github: "https://github.com/Jeremiah-05/IoT-Landslide-Detection",
     },
 ];
@@ -146,17 +143,19 @@ export default function Projects() {
                                     >
                                         <FaGithub size={16} />
                                     </motion.a>
-                                    <motion.a
-                                        href={project.live}
-                                        target={project.live !== "#" ? "_blank" : undefined}
-                                        rel={project.live !== "#" ? "noopener noreferrer" : undefined}
-                                        whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 transition-colors"
-                                        aria-label="View live"
-                                    >
-                                        <FaExternalLinkAlt size={14} />
-                                    </motion.a>
+                                    {project.live && (
+                                        <motion.a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 transition-colors"
+                                            aria-label="View live"
+                                        >
+                                            <FaExternalLinkAlt size={14} />
+                                        </motion.a>
+                                    )}
                                 </div>
                             </div>
 
