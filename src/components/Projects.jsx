@@ -69,7 +69,7 @@ const projects = [
         accentColor: "text-cyan-400",
         impact: "A fully working hardware-to-cloud prototype — real sensors, real alerts, real data on ThingSpeak",
         live: null,
-        github: "https://github.com/Jeremiah-05/IoT-Landslide-Detection",
+        github: "https://github.com/Jeremiah-05/landslide",
     },
 ];
 

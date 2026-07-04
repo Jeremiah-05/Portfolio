@@ -14,6 +14,15 @@ import {
 
 const repos = [
     {
+        name: "landslide",
+        description:
+            "IoT-based landslide early warning system using ESP8266, sensors, Blynk & ThingSpeak for real-time monitoring.",
+        language: "C++",
+        languageColor: "#f34b7d",
+        stars: 0,
+        forks: 0,
+    },
+    {
         name: "SIH",
         description:
             "Smart India Hackathon project repository built with TypeScript.",
@@ -31,29 +40,20 @@ const repos = [
         stars: 0,
         forks: 0,
     },
-    {
-        name: "lifelines-frontend",
-        description:
-            "Frontend application for the lifelines project, built with modern web technologies.",
-        language: "JavaScript",
-        languageColor: "#f1e05a",
-        stars: 0,
-        forks: 0,
-    },
 ];
 
 const stats = [
     {
         icon: FaCode,
         label: "Repositories",
-        value: "21",
+        value: "18",
         color: "text-purple-400",
         bg: "bg-purple-500/10",
     },
     {
         icon: FaFire,
         label: "Contributions",
-        value: "193+",
+        value: "200+",
         color: "text-cyan-400",
         bg: "bg-cyan-500/10",
     },

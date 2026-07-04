@@ -79,7 +79,6 @@ const experiences = [
             "https://www.linkedin.com/in/jeremiah-j-731241292/",
         gradient: "from-green-500 to-emerald-500",
         accentColor: "#10b981",
-        featured: true,
     },
 ];
 
