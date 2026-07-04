@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaEnvelope } from "react-icons/fa";
+import { FaArrowRight, FaEnvelope, FaDownload } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -107,7 +107,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.9 }}
-                            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                            className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4"
                         >
                             <Link
                                 href="/projects"
@@ -116,6 +116,15 @@ export default function Hero() {
                                 View Projects
                                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
                             </Link>
+                            <a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-8 py-4 rounded-full border border-purple-500/30 text-purple-300 font-medium text-base hover:bg-purple-500/10 hover:border-purple-500/50 transition-all hover:scale-105 active:scale-95"
+                            >
+                                <FaDownload size={14} />
+                                Resume
+                            </a>
                             <Link
                                 href="/contact"
                                 className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-gray-300 font-medium text-base hover:bg-white/5 hover:border-white/20 transition-all hover:scale-105 active:scale-95"
