@@ -61,17 +61,15 @@ An AI-powered CRM platform that transforms how businesses handle inbound leads w
 ### 🏔️ IoT-Based Landslide Detection System
 > *Designed for disaster-prone regions*
 
-A life-saving early warning system monitoring environmental conditions using IoT sensors with long-range communication.
+A real-time early warning system for landslide-prone slopes — monitors soil moisture, vibration, rainfall, temperature & humidity.
 
-- Real-time soil moisture, rain & vibration monitoring
-- Achieved real-time alert latency under 3 seconds
-- Designed for rural deployment with low-power communication
-- Covers long-range communication (~2–5 km using LoRa)
-- Cloud dashboards via ThingSpeak & Blynk
-- **Tech:** ESP8266 · LoRa SX1278 · DHT11 · ThingSpeak · Blynk · C++ · Arduino
+- Real-time environmental condition monitoring
+- Alerts delivered consistently during test runs
+- Cloud data logging and remote dashboards
+- **Tech:** ESP8266 Wi-Fi · DHT11 · ThingSpeak · Blynk · C++ · Arduino
 
 🔗 **Live:** [Dashboard / Demo](#)  
-📂 **GitHub:** [https://github.com/Jeremiah-05/IoT-Landslide-Detection](https://github.com/Jeremiah-05/IoT-Landslide-Detection)
+📂 **GitHub:** [https://github.com/Jeremiah-05/landslide](https://github.com/Jeremiah-05/landslide)
 
 ---
 
@@ -93,9 +91,9 @@ A life-saving early warning system monitoring environmental conditions using IoT
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Jeremiah-05&layout=compact&theme=tokyonight)
 
 ### ✨ Highlighted Repositories
+- [**landslide**](https://github.com/Jeremiah-05/landslide) (C++)
 - [**SIH**](https://github.com/Jeremiah-05/SIH) (TypeScript)
 - [**React**](https://github.com/Jeremiah-05/React) (JavaScript)
-- [**lifelines-frontend**](https://github.com/Jeremiah-05/lifelines-frontend) (JavaScript)
 
 ---
 
