@@ -120,23 +120,23 @@ A real-time early warning system for landslide-prone slopes — monitors soil mo
 ### 🏆 Hackathons
 | Award | Organization | Date |
 |-------|--------------|------|
-| **IIC Hackathon Challenge 2026 — 2nd Place** | PSG College of Arts & Science | February 2026 |
 | **Smart India Hackathon (SIH) 2025 — Internal Round** | Karunya Institute of Technology and Sciences | September 2025 |
 | **Digital Campus 2.0 on Google Cloud — G-K Hacks** | Karunya Institute of Technology and Sciences | November 2025 |
+| **IIC Hackathon Challenge 2026 — 2nd Place** | PSG College of Arts & Science | February 2026 |
 
 ### 💼 Internships
 | Role | Company | Date |
 |------|---------|------|
-| **Virtual Internship Program in Cybersecurity** | Cisco | October 2025 |
-| **Python Programming Internship** | CodeTech IT Solutions | June 2025 |
 | **Web Development Internship** | EdiGlobe | June 2024 |
+| **Python Programming Internship** | CodeTech IT Solutions | June 2025 |
+| **Virtual Internship Program in Cybersecurity** | Cisco | October 2025 |
 
 ### 📜 Certifications
 | Certification | Issuer | Date |
 |--------------|--------|------|
-| **Microsoft Certified: Azure Fundamentals (AZ-900)** | Microsoft | April 2026 |
-| **OCI 2025 Certified Data Science Professional** | Oracle | October 2025 |
 | **Microsoft Certified: Azure Data Fundamentals (DP-900)** | Microsoft | August 2025 |
+| **OCI 2025 Certified Data Science Professional** | Oracle | October 2025 |
+| **Microsoft Certified: Azure Fundamentals (AZ-900)** | Microsoft | April 2026 |
 
 ---
 
