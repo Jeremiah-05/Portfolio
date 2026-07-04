@@ -217,9 +217,9 @@ export default function Contact() {
                             </p>
                         </motion.div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                        <form onSubmit={handleSubmit} className="space-y-5" noValidate suppressHydrationWarning>
                             {/* Name */}
-                            <div>
+                            <div suppressHydrationWarning>
                                 <label
                                     htmlFor="name"
                                     className="block text-sm font-medium text-gray-400 mb-2"
@@ -243,7 +243,7 @@ export default function Contact() {
                             </div>
 
                             {/* Email */}
-                            <div>
+                            <div suppressHydrationWarning>
                                 <label
                                     htmlFor="email"
                                     className="block text-sm font-medium text-gray-400 mb-2"
@@ -267,7 +267,7 @@ export default function Contact() {
                             </div>
 
                             {/* Message */}
-                            <div>
+                            <div suppressHydrationWarning>
                                 <label
                                     htmlFor="message"
                                     className="block text-sm font-medium text-gray-400 mb-2"

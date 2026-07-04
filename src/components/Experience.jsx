@@ -6,265 +6,245 @@ import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import {
     FaArrowRight,
-    FaBriefcase,
     FaShieldAlt,
     FaPython,
     FaCode,
     FaLinkedin,
     FaFilePdf,
-    FaCalendarAlt,
-    FaMapMarkerAlt,
     FaExternalLinkAlt,
     FaCheckCircle,
+    FaReact,
+    FaHtml5,
+    FaLaptopCode,
+    FaMicrochip,
 } from "react-icons/fa";
 
-/* ─── Internship & Work Experience Data (Verified via LinkedIn) ─── */
-const experiences = [
+/* ─── Timeline Data (chronological journey) ─── */
+const timeline = [
     {
-        icon: FaShieldAlt,
-        title: "Cybersecurity",
-        company: "Cisco",
-        companyLogo: "cisco",
-        duration: "June 2025 – October 2025",
-        type: "Hybrid",
-        category: "Internship",
-        tags: [
-            "Education / Teaching / Training",
-            "Engineering and Technology",
-        ],
+        year: "2022 – 2023",
+        icon: FaHtml5,
+        title: "Completed the Learning of HTML, CSS and JavaScript",
+        subtitle: "Self-Taught",
         description:
-            "Cisco AICTE Virtual Internship Program 2025 — Gained hands-on experience in network security, threat analysis, and cybersecurity frameworks through Cisco's industry-leading program.",
-        certificate: "/Virtual-Internship-Cybersecurity.pdf",
-        linkedin:
-            "https://www.linkedin.com/in/jeremiah-j-731241292/",
-        gradient: "from-blue-500 to-cyan-500",
+            "Within the space of a year I worked on several personal projects which helped to perfect my skills on the rudiment of web development.",
+        gradient: "from-orange-500 to-red-500",
+        accentColor: "#f97316",
+    },
+    {
+        year: "2023 – 2024",
+        icon: FaReact,
+        title: "Completed the Learning of React, Firebase and State Managements",
+        subtitle: "Self-Taught",
+        description:
+            "I built on my previous knowledge by learning React.js, Redux, RTK, Context API, React Query, TypeScript for modern frontend development.",
+        gradient: "from-cyan-500 to-blue-500",
         accentColor: "#06b6d4",
     },
     {
-        icon: FaPython,
-        title: "Python Programming",
-        company: "CodeTech IT Solutions",
-        companyLogo: "codetech",
-        duration: "May 2025 – June 2025",
-        type: "Hybrid",
-        category: "Internship",
-        tags: [
-            "Education / Teaching / Training",
-            "Engineering and Technology",
-        ],
-        description:
-            "Internship Program in Python Programming — Developed practical skills in Python development, data handling, and building automation scripts for real-world IT solutions.",
-        certificate: "/CodeTech-IT-Solutions-Certificate.pdf",
-        linkedin:
-            "https://www.linkedin.com/in/jeremiah-j-731241292/",
-        gradient: "from-yellow-500 to-orange-500",
-        accentColor: "#f59e0b",
-    },
-    {
+        year: "2024",
         icon: FaCode,
-        title: "Web Development",
+        title: "Web Development Internship",
         company: "Ediglobe",
-        companyLogo: "ediglobe",
-        duration: "June 2024 – July 2024",
-        type: "Hybrid",
-        category: "Internship",
-        tags: [
-            "Education / Teaching / Training",
-            "Engineering and Technology",
-        ],
+        subtitle: "Internship · June 2024 – July 2024",
         description:
-            "Internship with EdiGlobe — Built and deployed responsive web applications using modern frontend technologies, gaining hands-on experience in full-stack web development workflows.",
-        certificate: "/Ediglobe-Internship-Certificate.pdf",
-        linkedin:
-            "https://www.linkedin.com/in/jeremiah-j-731241292/",
+            "Built and deployed responsive web applications using modern frontend technologies, gaining hands-on experience in full-stack web development workflows.",
         gradient: "from-green-500 to-emerald-500",
         accentColor: "#10b981",
+        certificate: "/Ediglobe-Internship-Certificate.pdf",
+        linkedin: "https://www.linkedin.com/in/jeremiah-j-731241292/",
+    },
+    {
+        year: "2025",
+        icon: FaPython,
+        title: "Python Programming Internship",
+        company: "CodeTech IT Solutions",
+        subtitle: "Internship · May 2025 – June 2025",
+        description:
+            "Developed practical skills in Python development, data handling, and building automation scripts for real-world IT solutions.",
+        gradient: "from-yellow-500 to-orange-500",
+        accentColor: "#f59e0b",
+        certificate: "/CodeTech-IT-Solutions-Certificate.pdf",
+        linkedin: "https://www.linkedin.com/in/jeremiah-j-731241292/",
+    },
+    {
+        year: "2025",
+        icon: FaShieldAlt,
+        title: "Cybersecurity Virtual Internship",
+        company: "Cisco",
+        subtitle: "Internship · June 2025 – October 2025",
+        description:
+            "Cisco AICTE Virtual Internship Program 2025 — Gained hands-on experience in network security, threat analysis, and cybersecurity frameworks.",
+        gradient: "from-blue-500 to-cyan-500",
+        accentColor: "#06b6d4",
+        certificate: "/Virtual-Internship-Cybersecurity.pdf",
+        linkedin: "https://www.linkedin.com/in/jeremiah-j-731241292/",
+    },
+    {
+        year: "2025",
+        icon: FaMicrochip,
+        title: "Built IoT Landslide Detection System",
+        subtitle: "Project · ESP8266 + Blynk + ThingSpeak",
+        description:
+            "Designed and built a real-time early warning system for landslide-prone slopes with cloud data logging, remote alerts, and sensor-based monitoring.",
+        gradient: "from-teal-500 to-cyan-500",
+        accentColor: "#14b8a6",
+    },
+    {
+        year: "2025 – Present",
+        icon: FaLaptopCode,
+        title: "Building LeadSync CRM & Full-Stack Systems",
+        subtitle: "Active Development",
+        description:
+            "Developing an AI-powered CRM with Groq Llama-8b, microservices backend, and real-time messaging — while building scalable, production-ready applications.",
+        gradient: "from-purple-500 to-violet-500",
+        accentColor: "#8b5cf6",
     },
 ];
 
-
-/* ─── Company Logo Component ─── */
-function CompanyAvatar({ company, gradient }) {
-    const initial = company.charAt(0).toUpperCase();
+/* ─── Timeline Node (center circle icon) ─── */
+function TimelineNode({ icon: Icon, gradient, index }) {
     return (
-        <div
-            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg`}
+        <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+                delay: 0.15,
+                duration: 0.4,
+                type: "spring",
+                stiffness: 200,
+            }}
+            className="relative z-10 flex items-center justify-center"
         >
-            {initial}
-        </div>
+            {/* Outer ring */}
+            <div className="w-14 h-14 rounded-full bg-[#0a0a1a] border-2 border-gray-700 flex items-center justify-center shadow-xl">
+                {/* Inner gradient circle */}
+                <div
+                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-lg`}
+                >
+                    <Icon size={16} />
+                </div>
+            </div>
+        </motion.div>
     );
 }
 
-/* ─── Experience Card ─── */
-function ExperienceCard({ exp, index }) {
+/* ─── Timeline Card ─── */
+function TimelineCard({ item, index, side }) {
     const [expanded, setExpanded] = useState(false);
+    const isLeft = side === "left";
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
-            className="relative group"
+            initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+            className="relative"
         >
-            {/* Timeline connector */}
-            {index < experiences.length - 1 && (
-                <div className="absolute left-6 top-[72px] bottom-0 w-[2px] bg-gradient-to-b from-white/10 to-transparent hidden md:block" />
-            )}
-
             <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-                className="glass-card p-0 overflow-hidden cursor-pointer"
-                onClick={() => setExpanded(!expanded)}
+                whileHover={{ y: -3 }}
+                transition={{ duration: 0.2 }}
+                className={`glass-card p-5 sm:p-6 overflow-hidden ${
+                    item.certificate ? "cursor-pointer" : ""
+                }`}
+                onClick={() => item.certificate && setExpanded(!expanded)}
             >
-                {/* Top accent bar */}
-                <div
-                    className={`h-1 w-full bg-gradient-to-r ${exp.gradient}`}
-                />
 
-                <div className="p-6 sm:p-8">
-                    {/* Header row */}
-                    <div className="flex items-start gap-4 mb-4">
-                        <CompanyAvatar
-                            company={exp.company}
-                            gradient={exp.gradient}
-                        />
-                        <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 flex-wrap">
-                                <h3
-                                    className="text-xl font-bold text-white"
-                                    style={{
-                                        fontFamily: "'Outfit', sans-serif",
-                                    }}
-                                >
-                                    {exp.title}
-                                </h3>
-                                {exp.featured && (
-                                    <span className="text-yellow-400 text-sm">
-                                        ★
-                                    </span>
-                                )}
-                                <FaCheckCircle
-                                    className="text-green-400 shrink-0"
-                                    size={14}
-                                    title="Verified on LinkedIn"
-                                />
-                            </div>
-                            <p className="text-gray-400 text-sm mt-0.5">
-                                {exp.company}
-                            </p>
-                        </div>
-                    </div>
+                <h4
+                    className="text-base sm:text-lg font-bold text-white mb-1"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                    {item.title}
+                </h4>
 
-                    {/* Meta info */}
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 text-xs text-gray-500">
-                        <span className="flex items-center gap-1.5">
-                            <FaCalendarAlt size={11} />
-                            {exp.duration}
+                {item.company && (
+                    <div className="flex items-center gap-1.5 mb-1">
+                        <span className="text-sm text-gray-300 font-medium">
+                            {item.company}
                         </span>
-                        <span className="flex items-center gap-1.5">
-                            <FaMapMarkerAlt size={11} />
-                            {exp.type}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                            <FaBriefcase size={11} />
-                            {exp.category}
-                        </span>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                        <span
-                            className="text-xs font-medium px-3 py-1 rounded-full"
-                            style={{
-                                background: `${exp.accentColor}20`,
-                                color: exp.accentColor,
-                                border: `1px solid ${exp.accentColor}30`,
-                            }}
-                        >
-                            {exp.category}
-                        </span>
-                        {exp.tags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-sm text-gray-400 leading-relaxed mb-5">
-                        {exp.description}
-                    </p>
-
-                    {/* Expandable actions */}
-                    <AnimatePresence>
-                        {expanded && (
-                            <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: "auto" }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="flex flex-wrap gap-3 pt-2 pb-1 border-t border-white/5">
-                                    {/* View Certificate */}
-                                    <a
-                                        href={exp.certificate}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm text-gray-300 hover:text-white transition-all border border-white/5 hover:border-white/15 group/btn"
-                                    >
-                                        <FaFilePdf
-                                            size={14}
-                                            className="text-red-400"
-                                        />
-                                        <span>View Certificate</span>
-                                        <FaExternalLinkAlt
-                                            size={10}
-                                            className="opacity-0 group-hover/btn:opacity-100 transition-opacity"
-                                        />
-                                    </a>
-
-                                    {/* Verify on LinkedIn */}
-                                    <a
-                                        href={exp.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0077b5]/10 hover:bg-[#0077b5]/20 text-sm text-[#0077b5] hover:text-[#00a0dc] transition-all border border-[#0077b5]/20 hover:border-[#0077b5]/40 group/btn"
-                                    >
-                                        <FaLinkedin size={14} />
-                                        <span>LinkedIn</span>
-                                        <FaExternalLinkAlt
-                                            size={10}
-                                            className="opacity-0 group-hover/btn:opacity-100 transition-opacity"
-                                        />
-                                    </a>
-                                </div>
-                            </motion.div>
+                        {item.linkedin && (
+                            <FaCheckCircle
+                                className="text-green-400"
+                                size={11}
+                                title="Verified on LinkedIn"
+                            />
                         )}
-                    </AnimatePresence>
-
-                    {/* Expand hint */}
-                    <div className="flex items-center gap-1.5 text-xs text-gray-600 mt-2">
-                        <motion.span
-                            animate={{ rotate: expanded ? 90 : 0 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <FaArrowRight size={10} />
-                        </motion.span>
-                        <span>
-                            {expanded
-                                ? "Click to collapse"
-                                : "Click for certificate & verification"}
-                        </span>
                     </div>
-                </div>
+                )}
+
+                <p className="text-xs text-gray-500 mb-3 font-medium">
+                    {item.subtitle}
+                </p>
+
+                <p className="text-sm text-gray-400 leading-relaxed">
+                    {item.description}
+                </p>
+
+                {/* Expandable certificate/linkedin actions */}
+                {item.certificate && (
+                    <>
+                        <AnimatePresence>
+                            {expanded && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className="flex flex-wrap gap-2 pt-3 mt-3 border-t border-white/5">
+                                        <a
+                                            href={item.certificate}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-xs text-gray-300 hover:text-white transition-all border border-white/5 hover:border-white/15"
+                                        >
+                                            <FaFilePdf
+                                                size={11}
+                                                className="text-red-400"
+                                            />
+                                            <span>Certificate</span>
+                                            <FaExternalLinkAlt
+                                                size={8}
+                                                className="opacity-50"
+                                            />
+                                        </a>
+                                        <a
+                                            href={item.linkedin}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#0077b5]/10 hover:bg-[#0077b5]/20 text-xs text-[#0077b5] hover:text-[#00a0dc] transition-all border border-[#0077b5]/20 hover:border-[#0077b5]/40"
+                                        >
+                                            <FaLinkedin size={11} />
+                                            <span>LinkedIn</span>
+                                            <FaExternalLinkAlt
+                                                size={8}
+                                                className="opacity-50"
+                                            />
+                                        </a>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        <div className="flex items-center gap-1.5 text-[10px] text-gray-600 mt-2">
+                            <motion.span
+                                animate={{ rotate: expanded ? 90 : 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <FaArrowRight size={8} />
+                            </motion.span>
+                            <span>
+                                {expanded
+                                    ? "Collapse"
+                                    : "View certificate & verification"}
+                            </span>
+                        </div>
+                    </>
+                )}
             </motion.div>
         </motion.div>
     );
@@ -274,25 +254,150 @@ function ExperienceCard({ exp, index }) {
 export default function Experience() {
     return (
         <SectionWrapper id="experience">
-            {/* Internship & Work Experience Section */}
             <SectionTitle
-                title="Internship & Work Experience"
-                subtitle="Click any card to view certificate and LinkedIn profile."
+                title="My Experience"
+                subtitle="A timeline of growth — from learning the basics to building production systems."
             />
 
-            <div className="grid gap-6 mb-20">
-                {experiences.map((exp, i) => (
-                    <ExperienceCard key={exp.title} exp={exp} index={i} />
-                ))}
+            {/* ═══ TIMELINE ═══ */}
+            <div className="relative">
+                {/* Central vertical line */}
+                <div className="absolute left-[26px] md:left-1/2 md:-translate-x-[1px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-gray-700 via-gray-700/60 to-transparent" />
+
+                <div className="space-y-10 md:space-y-14">
+                    {timeline.map((item, i) => {
+                        const isLeft = i % 2 === 0;
+
+                        return (
+                            <div key={i} className="relative">
+                                {/* ─── Desktop: alternating left/right ─── */}
+                                <div className="hidden md:grid md:grid-cols-[1fr_56px_1fr] items-start">
+                                    {/* Left column */}
+                                    <div
+                                        className={
+                                            isLeft
+                                                ? "pr-8"
+                                                : "flex items-start justify-end pt-[18px] pr-6"
+                                        }
+                                    >
+                                        {isLeft ? (
+                                            <TimelineCard
+                                                item={item}
+                                                index={i}
+                                                side="left"
+                                            />
+                                        ) : (
+                                            <motion.span
+                                                initial={{ opacity: 0, x: 20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.2 }}
+                                                className="text-sm font-semibold text-gray-500 tracking-wide whitespace-nowrap"
+                                                style={{
+                                                    fontFamily:
+                                                        "'Outfit', sans-serif",
+                                                }}
+                                            >
+                                                {item.year}
+                                            </motion.span>
+                                        )}
+                                    </div>
+
+                                    {/* Center node */}
+                                    <div className="flex justify-center">
+                                        <TimelineNode
+                                            icon={item.icon}
+                                            gradient={item.gradient}
+                                            index={i}
+                                        />
+                                    </div>
+
+                                    {/* Right column */}
+                                    <div
+                                        className={
+                                            isLeft
+                                                ? "flex items-start pt-[18px] pl-6"
+                                                : "pl-8"
+                                        }
+                                    >
+                                        {isLeft ? (
+                                            <motion.span
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.2 }}
+                                                className="text-sm font-semibold text-gray-500 tracking-wide whitespace-nowrap"
+                                                style={{
+                                                    fontFamily:
+                                                        "'Outfit', sans-serif",
+                                                }}
+                                            >
+                                                {item.year}
+                                            </motion.span>
+                                        ) : (
+                                            <TimelineCard
+                                                item={item}
+                                                index={i}
+                                                side="right"
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* ─── Mobile: single column ─── */}
+                                <div className="md:hidden flex gap-5">
+                                    {/* Node on the line */}
+                                    <div className="flex flex-col items-center shrink-0">
+                                        <TimelineNode
+                                            icon={item.icon}
+                                            gradient={item.gradient}
+                                            index={i}
+                                        />
+                                    </div>
+
+                                    {/* Year + card */}
+                                    <div className="flex-1 min-w-0 -mt-0.5">
+                                        <motion.span
+                                            initial={{ opacity: 0 }}
+                                            whileInView={{ opacity: 1 }}
+                                            viewport={{ once: true }}
+                                            className="text-xs font-semibold text-gray-500 tracking-wide mb-2 block"
+                                            style={{
+                                                fontFamily:
+                                                    "'Outfit', sans-serif",
+                                            }}
+                                        >
+                                            {item.year}
+                                        </motion.span>
+                                        <TimelineCard
+                                            item={item}
+                                            index={i}
+                                            side="right"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Bottom end dot */}
+                <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3, type: "spring" }}
+                    className="absolute left-[22px] md:left-1/2 md:-translate-x-[5px] -bottom-3 w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 ring-4 ring-[#050510]"
+                />
             </div>
 
-            {/* LinkedIn verification banner */}
+            {/* LinkedIn banner */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="mb-20"
+                className="mt-16"
             >
                 <a
                     href="https://www.linkedin.com/in/jeremiah-j-731241292/"
@@ -302,7 +407,7 @@ export default function Experience() {
                 >
                     <FaLinkedin size={20} className="text-[#0077b5]" />
                     <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
-                        LinkedIn Profile
+                        Verify all experiences on LinkedIn
                     </span>
                     <FaExternalLinkAlt
                         size={11}
@@ -310,8 +415,6 @@ export default function Experience() {
                     />
                 </a>
             </motion.div>
-
-
         </SectionWrapper>
     );
 }
