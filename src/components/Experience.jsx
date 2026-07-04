@@ -22,26 +22,6 @@ import {
 /* ─── Timeline Data (chronological journey) ─── */
 const timeline = [
     {
-        year: "2022 – 2023",
-        icon: FaHtml5,
-        title: "Completed the Learning of HTML, CSS and JavaScript",
-        subtitle: "Self-Taught",
-        description:
-            "Within the space of a year I worked on several personal projects which helped to perfect my skills on the rudiment of web development.",
-        gradient: "from-orange-500 to-red-500",
-        accentColor: "#f97316",
-    },
-    {
-        year: "2023 – 2024",
-        icon: FaReact,
-        title: "Completed the Learning of React, Firebase and State Managements",
-        subtitle: "Self-Taught",
-        description:
-            "I built on my previous knowledge by learning React.js, Redux, RTK, Context API, React Query, TypeScript for modern frontend development.",
-        gradient: "from-cyan-500 to-blue-500",
-        accentColor: "#06b6d4",
-    },
-    {
         year: "2024",
         icon: FaCode,
         title: "Web Development Internship",
