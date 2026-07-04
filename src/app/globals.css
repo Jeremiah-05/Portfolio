@@ -96,6 +96,7 @@ body {
 /* Section spacing */
 section {
   position: relative;
+  scroll-margin-top: 80px;
 }
 
 /* Floating animation */

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { FaRocket, FaServer, FaBrain, FaMapMarkerAlt, FaGraduationCap, FaUniversity } from "react-icons/fa";

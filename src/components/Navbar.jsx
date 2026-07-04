@@ -1,40 +1,97 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 const navLinks = [
-    { name: "About", href: "/about" },
-    { name: "Skills", href: "/skills" },
-    { name: "Projects", href: "/projects" },
-    { name: "Certifications", href: "/certifications" },
-    { name: "Research", href: "/research" },
-    { name: "Experience", href: "/experience" },
-    { name: "GitHub", href: "/github" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: "/about", sectionId: "about" },
+    { name: "Skills", href: "/skills", sectionId: "skills" },
+    { name: "Projects", href: "/projects", sectionId: "projects" },
+    { name: "Certifications", href: "/certifications", sectionId: "certifications" },
+    { name: "Research", href: "/research", sectionId: "research" },
+    { name: "Experience", href: "/experience", sectionId: "experience" },
+    { name: "GitHub", href: "/github", sectionId: "github" },
+    { name: "Contact", href: "/contact", sectionId: "contact" },
 ];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
     const pathname = usePathname();
+    const router = useRouter();
+
+    // Check if we're on the single-page (about) route
+    const isAboutPage = pathname === "/about";
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
+
+            // Track active section on the about page
+            if (isAboutPage) {
+                const sections = navLinks.map((l) => l.sectionId);
+                let current = "";
+                for (const id of sections) {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top <= 120) {
+                            current = id;
+                        }
+                    }
+                }
+                setActiveSection(current);
+            }
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isAboutPage]);
 
     // Close mobile menu on route change
     useEffect(() => {
         setMobileOpen(false);
     }, [pathname]);
+
+    const handleNavClick = (e, link) => {
+        if (isAboutPage) {
+            // On the about page, smooth-scroll to the section
+            e.preventDefault();
+            const el = document.getElementById(link.sectionId);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            setMobileOpen(false);
+        } else {
+            // From other pages, navigate to /about#sectionId
+            e.preventDefault();
+            router.push(`/about#${link.sectionId}`);
+        }
+    };
+
+    // On the about page, scroll to hash on mount
+    useEffect(() => {
+        if (isAboutPage && window.location.hash) {
+            const id = window.location.hash.slice(1);
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 300);
+        }
+    }, [isAboutPage]);
+
+    const isLinkActive = (link) => {
+        if (isAboutPage) {
+            return activeSection === link.sectionId;
+        }
+        return pathname === link.href;
+    };
 
     return (
         <motion.nav
@@ -64,12 +121,13 @@ export default function Navbar() {
                     {/* Desktop links */}
                     <div className="hidden md:flex items-center gap-1">
                         {navLinks.map((link) => {
-                            const isActive = pathname === link.href;
+                            const isActive = isLinkActive(link);
                             return (
-                                <Link
+                                <a
                                     key={link.name}
-                                    href={link.href}
-                                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
+                                    href={isAboutPage ? `#${link.sectionId}` : `/about#${link.sectionId}`}
+                                    onClick={(e) => handleNavClick(e, link)}
+                                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${isActive
                                         ? "text-purple-400"
                                         : "text-gray-400 hover:text-white hover:bg-white/5"
                                         }`}
@@ -82,15 +140,16 @@ export default function Navbar() {
                                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                         />
                                     )}
-                                </Link>
+                                </a>
                             );
                         })}
-                        <Link
-                            href="/contact"
-                            className="ml-3 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                        <a
+                            href={isAboutPage ? "#contact" : "/about#contact"}
+                            onClick={(e) => handleNavClick(e, { sectionId: "contact" })}
+                            className="ml-3 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer"
                         >
                             Hire Me
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Mobile toggle */}
@@ -115,26 +174,28 @@ export default function Navbar() {
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
                             {navLinks.map((link) => {
-                                const isActive = pathname === link.href;
+                                const isActive = isLinkActive(link);
                                 return (
-                                    <Link
+                                    <a
                                         key={link.name}
-                                        href={link.href}
-                                        className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive
+                                        href={isAboutPage ? `#${link.sectionId}` : `/about#${link.sectionId}`}
+                                        onClick={(e) => handleNavClick(e, link)}
+                                        className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${isActive
                                             ? "text-purple-400 bg-purple-500/10"
                                             : "text-gray-400 hover:text-white hover:bg-white/5"
                                             }`}
                                     >
                                         {link.name}
-                                    </Link>
+                                    </a>
                                 );
                             })}
-                            <Link
-                                href="/contact"
-                                className="mt-2 px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold text-center"
+                            <a
+                                href={isAboutPage ? "#contact" : "/about#contact"}
+                                onClick={(e) => handleNavClick(e, { sectionId: "contact" })}
+                                className="mt-2 px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold text-center cursor-pointer"
                             >
                                 Hire Me
-                            </Link>
+                            </a>
                         </div>
                     </motion.div>
                 )}
