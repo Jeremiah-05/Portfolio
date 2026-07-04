@@ -46,7 +46,7 @@ const stats = [
     {
         icon: FaCode,
         label: "Repositories",
-        value: "18",
+        value: "22",
         color: "text-purple-400",
         bg: "bg-purple-500/10",
     },
