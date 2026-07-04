@@ -163,28 +163,24 @@ Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 ```
 Portfolio/
 ├── public/              # Static assets
+│   ├── resume.pdf       # Downloadable resume
+│   └── ...
 ├── src/
 │   ├── app/             # Next.js App Router
 │   │   ├── layout.js        # Root layout with fonts & metadata
 │   │   ├── page.js          # Home page
-│   │   ├── about/           # About route
-│   │   ├── skills/          # Skills route
-│   │   ├── projects/        # Projects route
-│   │   ├── certifications/  # Certifications route
-│   │   ├── research/        # Research & Publications route
-│   │   ├── experience/      # Experience route
-│   │   ├── github/          # GitHub stats route
-│   │   └── contact/         # Contact route
+│   │   ├── about/           # Single-page scrolling portfolio route
+│   │   └── ...              # Other direct routes
 │   └── components/      # React components
 │       ├── Hero.jsx          # Landing section with typewriter effect
 │       ├── About.jsx         # About me section
 │       ├── Skills.jsx        # Skills with animated badges
 │       ├── Projects.jsx      # Featured projects showcase
-│       ├── Experience.jsx    # Current focus areas
+│       ├── Experience.jsx    # Professional experience and timeline
 │       ├── Certifications.jsx # Certifications & awards
 │       ├── Research.jsx       # Research & publications
 │       ├── Github.jsx        # GitHub activity integration
-│       ├── Contact.jsx       # Contact form with Supabase
+│       ├── Contact.jsx       # Contact form
 │       ├── Navbar.jsx        # Navigation bar
 │       ├── Footer.jsx        # Footer with social links
 │
