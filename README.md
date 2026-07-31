@@ -134,7 +134,7 @@ A real-time early warning system for landslide-prone slopes — monitors soil mo
 ### 📜 Certifications
 | Certification | Issuer | Date |
 |--------------|--------|------|
-| **Microsoft Certified: Azure Data Fundamentals (DP-900)** | Microsoft | August 2025 |
+| **Google Cloud Gen AI Academy APAC 2026 – Cohort 2** | Google | July 2026 |
 | **OCI 2025 Certified Data Science Professional** | Oracle | October 2025 |
 | **Microsoft Certified: Azure Fundamentals (AZ-900)** | Microsoft | April 2026 |
 

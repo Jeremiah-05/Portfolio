@@ -122,16 +122,16 @@ const categories = [
         accent: "#a78bfa",
         items: [
             {
-                title: "Microsoft Certified: Azure Data Fundamentals",
-                issuer: "Microsoft",
-                date: "August 2025",
-                icon: FaMicrosoft,
-                gradient: "from-violet-500 to-purple-600",
-                glowColor: "rgba(139, 92, 246, 0.15)",
+                title: "Google Cloud Gen AI Academy APAC 2026 – Cohort 2",
+                issuer: "Google",
+                date: "July 2026",
+                icon: SiGooglecloud,
+                gradient: "from-emerald-500 to-teal-600",
+                glowColor: "rgba(16, 185, 129, 0.15)",
                 description:
-                    "Demonstrated understanding of core data concepts, relational and non-relational data workloads, and analytics workloads on Azure.",
-                credentialUrl: "https://www.linkedin.com/in/jeremiah-j-731241292/",
-                badge: "DP-900",
+                    "Completed Google Cloud Gen AI Academy APAC 2026 program, gaining hands-on expertise in generative AI technologies and cloud-based AI solutions.",
+                credentialUrl: "https://certificate.hack2skill.com/verify/2026H2S07GCGENAIAPACC2-P01247",
+                badge: "Gen AI",
             },
             {
                 title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
