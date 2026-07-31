@@ -25,14 +25,14 @@ const categories = [
         icon: FaBrain,
         color: "from-pink-500 to-rose-600",
         accent: "#f472b6",
-        skills: ["Sentiment Analysis", "NLP", "LLM Integration", "Whisper (ASR)", "ML Basics"],
+        skills: ["NLP", "LLM Integration", "ML Basics"],
     },
     {
         title: "IoT",
         icon: FaMicrochip,
         color: "from-emerald-500 to-teal-600",
         accent: "#34d399",
-        skills: ["Embedded Systems", "IoMT", "ESP8266", "Edge Computing", "ThingSpeak", "Blynk"],
+        skills: ["Embedded Systems", "IoMT", "Edge Computing", "ThingSpeak", "Blynk"],
     },
 ];
 

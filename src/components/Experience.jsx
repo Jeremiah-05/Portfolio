@@ -24,11 +24,11 @@ const timeline = [
     {
         year: "2024",
         icon: FaCode,
-        title: "Web Development Internship",
-        company: "Ediglobe",
-        subtitle: "Internship · June 2024 – July 2024",
+        title: "Full Stack Developer Intern",
+        company: "Ediglobe Solution Pvt. Ltd.",
+        subtitle: "Internship · June 2024 – July 2024 · Virtual",
         description:
-            "Built and deployed responsive web applications using modern frontend technologies, gaining hands-on experience in full-stack web development workflows.",
+            "Developed responsive web applications using HTML, CSS, JavaScript, and modern web development practices. Assisted in backend development, database integration, and REST API implementation.",
         gradient: "from-green-500 to-emerald-500",
         accentColor: "#10b981",
         certificate: "/Ediglobe-Internship-Certificate.pdf",
@@ -39,9 +39,9 @@ const timeline = [
         icon: FaPython,
         title: "Python Programming Internship",
         company: "CodeTech IT Solutions",
-        subtitle: "Internship · May 2025 – June 2025",
+        subtitle: "Internship · June 2025 · Virtual",
         description:
-            "Developed practical skills in Python development, data handling, and building automation scripts for real-world IT solutions.",
+            "Implemented data structures, automation scripts, and problem-solving solutions through practical assignments. Improved debugging, code optimization, and software development practices.",
         gradient: "from-yellow-500 to-orange-500",
         accentColor: "#f59e0b",
         certificate: "/CodeTech-IT-Solutions-Certificate.pdf",
@@ -51,10 +51,10 @@ const timeline = [
         year: "2025",
         icon: FaShieldAlt,
         title: "Cybersecurity Virtual Internship",
-        company: "Cisco",
-        subtitle: "Internship · June 2025 – October 2025",
+        company: "Cisco Networking Academy",
+        subtitle: "Internship · July 2025 – October 2025 · Virtual",
         description:
-            "Cisco AICTE Virtual Internship Program 2025 — Gained hands-on experience in network security, threat analysis, and cybersecurity frameworks.",
+            "Gained hands-on experience in network security, cybersecurity fundamentals, and secure network design. Strengthened knowledge of cybersecurity best practices, network protocols, and infrastructure security.",
         gradient: "from-blue-500 to-cyan-500",
         accentColor: "#06b6d4",
         certificate: "/Virtual-Internship-Cybersecurity.pdf",
@@ -126,9 +126,8 @@ function TimelineCard({ item, index, side }) {
             <motion.div
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2 }}
-                className={`glass-card p-5 sm:p-6 overflow-hidden ${
-                    item.certificate ? "cursor-pointer" : ""
-                }`}
+                className={`glass-card p-5 sm:p-6 overflow-hidden ${item.certificate ? "cursor-pointer" : ""
+                    }`}
                 onClick={() => item.certificate && setExpanded(!expanded)}
             >
 
